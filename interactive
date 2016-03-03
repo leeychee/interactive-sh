@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [[ $# -lt 1 ]];then
+	echo "Usage:
+	$0 cmd"
+	exit 1
+fi
+
+CMD=$@
+HISTORY=~/.rlwrap_history/$1
+
+while true;do
+	subcmd=$(rlwrap -a -c -S "> " -H $HISTORY -o cat)
+	# read -ep "> " subcmd
+	if [[ $subcmd == "quit" ]]; then
+		exit 0
+	fi
+	eval $CMD $subcmd
+done
+
+exit 0
