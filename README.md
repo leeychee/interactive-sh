@@ -1,12 +1,18 @@
-# Simple Interactive Wrapper of CLI with sub-command
+# Simple Interactive Wrapper of CLI with sub-commands
+
+Nowdays, we have lots of CLI tools with many sub-commands, eg. hdfs, etcdctl...
+When we use these tools continuously， we may input main-command again by again.
+
+This little wrapper will help you to reduce that useless input.
 
 ## Usage
 
 ```bash
-# install test cli(hdfs)
+# install test cli(hdfs), just for example
 go get github.com/colinmarc/hdfs/cmd/hdfs
 # config to connect to your hadoop
 export HADOOP_NAMENODE="wxnn:8020"
+
 ./interactive hdfs
 ```
 
@@ -27,4 +33,4 @@ drwxrwxrwx      root  supergroup  0 Feb 23 15:22 root
 > quit
 ```
 
-quit OR exit will quit the session.
+"quit" will quit the session.
